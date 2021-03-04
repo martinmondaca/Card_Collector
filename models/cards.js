@@ -22,6 +22,21 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             len: [1]
         },
+        cardyear: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            len: [1]
+        },
+        createdAt: {
+            type: DataTypes.DATE(3),
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3)'),
+            field: 'created_at',
+          },
+          updatedAt: {
+            type: DataTypes.DATE(3),
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP(3)'),
+            field: 'updated_at',
+          },
     }, {
         freezeTableName: true
     });
