@@ -2,3 +2,17 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+/* nav {
+  padding: 25px 0px 25px 0px;
+} */
+
+.brand-logo{
+  font-family: 'Candal', sans-serif;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
