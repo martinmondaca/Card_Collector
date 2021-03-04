@@ -1,7 +1,8 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-
+var user = [];
+const { QueryTypes } = require('sequelize');
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -43,6 +44,20 @@ module.exports = function (app) {
       console.log(dbPP)
       res.json(dbPP);
     });
+  });
+
+  app.get("/api/userscards", async function(req, res) {
+    await db.sequelize.query(`SELECT cards.id, cards.cardnumber, cards.name, cards.setname, cards.cardyear
+    FROM cards
+    INNER JOIN userscards
+    ON cards.id = userscards.cardId
+    INNER JOIN Users
+    ON Users.id = userscards.UserId
+    WHERE Users.id = ${req.user.id}`, { type: QueryTypes.SELECT }).then((results) => {
+      res.json(results)
+    }).catch(err => {
+      console.log(err)
+    })
   });
 
   // Route for getting some data about our user to be used client side
