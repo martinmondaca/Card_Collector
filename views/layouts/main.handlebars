@@ -2,12 +2,102 @@
 <html lang="en">
 
 <head>
+    <title>Passport Authentication</title>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
-    {{{ body }}}
+
+    <nav class="cyan lighten-2">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Card Collector</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <p>Welcome <span class="member-name"></span></p>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                </div>
+            </div>
+        </li>
+        <li><a href="#!"><i class="material-icons"></i></a>
+            <p>Welcome <span class="member-name"></span></p>
+        </li>
+        <div>
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons"></i>Baseball Sets</div>
+                    <div class="collapsible-body"><span>
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons"></i>Bazooka</div>
+                                    <div class="collapsible-body"><span>
+                                            {{!-- <ul>
+                                                <li><a href="#">1959</a></li>
+                                                <li><a href="#">1960</a></li>
+                                                <li><a href="#">1961</a></li>
+                                                <li><a href="#">1962</a></li>
+                                                <li><a href="#">1963</a></li>
+                                                <li><a href="#">1964</a></li>
+                                                <li><a href="#">1965</a></li>
+                                                <li><a href="#">1966</a></li>
+                                                <li><a href="#">1967</a></li>
+                                                <li><a href="#">1968</a></li>
+                                                <li><a href="#">1971</a></li>
+                                                <li><a href="#">1988</a></li>
+                                                <li><a href="#">1989</a></li>
+                                                <li><a href="#">1990</a></li>
+                                                <li><a href="#">1991</a></li>
+                                            </ul> --}}
+                                            {{{body}}}
+                                        </span></div>
+                                </li>
+                            </ul>
+                        </span></div>
+                </li>
+            </ul>
+        </div>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a class="waves-effect" href="/logout">Logout</a>
+        </li>
+    </ul>
+    <a href="#" data-target="slide-out" class="btn-floating btn-large waves-effect waves-light red sidenav-trigger"><i
+            class="material-icons">></i></a>
+
+
+
+
+    <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="./images/1963_Bazooka.jpg"></a>
+        <a class="carousel-item" href="#two!"><img src="./images/art_mahaffey_autograph.jpg"></a>
+        <a class="carousel-item" href="#three!"><img src="./images/bob_allison_autograph.jpg"></a>
+        <a class="carousel-item" href="#four!"><img src="./images/ernie_banks_autograph.jpg"></a>
+        <a class="carousel-item" href="#five!"><img src="./images/hank_aaron_autograph.jpg"></a>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+
+    <script src="" async defer></script>
 </body>
 
 </html>

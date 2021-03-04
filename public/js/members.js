@@ -1,6 +1,6 @@
 function newCardRow(data) {
   var tableBody = $("#tableBody")
-  var tableRow =`<tr>
+  var tableRow = `<tr>
   <td id="cardnumber">${data.cardnumber}</td>
   <td id="playername">${data.name}</td>
   <td id="isowned">
@@ -51,7 +51,6 @@ $(document).ready(function () {
   //card img carousel
   $('.carousel').carousel({
     padding: 200
-
   });
 
   setInterval(function () {
