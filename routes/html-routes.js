@@ -2,15 +2,20 @@
 const db = require("../models");
 const path = require("path");
 const exphbs = require("express-handlebars")
+const Handlebars = require("handlebars")
 
 // const passport = require("../config/passport");
+const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   // Set Handlebars as the default templating engine.
-  app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+  app.engine("handlebars", exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
+  }));
   app.set("view engine", "handlebars");
   //hard coding years
   var Bazooka = {
@@ -85,8 +90,8 @@ module.exports = function (app) {
       //   currentSet.cardInfo.concat(currentCardData)
       // }
       // var setToRender = currentSet
-      var currentSet = JSON.stringify(data[0])
-      res.render("set", { cards: currentSet })
+      var currentSet = data[0].id
+      res.render("set", { cards: data })
       // console.log(currentSet)
 
     });
