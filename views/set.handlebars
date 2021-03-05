@@ -37,4 +37,39 @@
 </ul>
 --}}
 
-{{cards}}
+{{!-- {{#each cards}}
+<p>{{this.id}}</p>
+
+{{/each}} --}}
+<div class="container">
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Card Number</th>
+                <th>Name</th>
+                <th>Set Name</th>
+                <th>Set Year</th>
+                <th>Own?</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each cards}}
+            <tr>
+                <td>{{this.cardnumber}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.setname}}</td>
+                <td>{{this.cardyear}}</td>
+                <td>
+                    <form>
+                        <label for={{this.id}}>
+                            <input type="checkbox" class="filled-in" />
+                            <span></span>
+                        </label>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
