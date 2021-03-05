@@ -1,0 +1,75 @@
+{{!-- <label>
+    <input type="checkbox" class="filled-in" checked="checked" />
+</label></td>
+
+<table>
+    <thead>
+        <tr>
+            <th>Card Number</th>
+            <th>Card Name</th>
+            <th>Set Name</th>
+            <th>Set Year</th>
+            <th>Owned?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each cardInfo}}
+        <tr>
+            <td>{{cardnumber}}</td>
+            <td>{{name}}</td>
+            <td>{{setname}}</td>
+            <td>{{cardyear}}</td>
+            <td><label>
+                    <input type="checkbox" class="filled-in" checked="checked" />
+                </label></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table> --}}
+
+
+
+{{!-- <ul>
+    {{#each cardInfo }}
+    <li><a id={{id}}>{{id}}</a></li>
+    {{/each}}
+</ul>
+--}}
+
+{{!-- {{#each cards}}
+<p>{{this.id}}</p>
+
+{{/each}} --}}
+<div class="container">
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Card Number</th>
+                <th>Name</th>
+                <th>Set Name</th>
+                <th>Set Year</th>
+                <th>Own?</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each cards}}
+            <tr>
+                <td>{{this.cardnumber}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.setname}}</td>
+                <td>{{this.cardyear}}</td>
+                <td>
+                    <form>
+                        <label for={{this.id}}>
+                            <input type="checkbox" class="filled-in" />
+                            <span></span>
+                        </label>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
