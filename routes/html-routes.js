@@ -48,18 +48,42 @@ module.exports = function (app) {
   });
 
   app.get("/members/:setname/:cardyear", isAuthenticated, (req, res) => {
+
     console.log(req.params.cardyear)
     var setSearch = req.params.setname;
     var yearSearch = req.params.cardyear;
+    var setSearch = req.params.setname
     db.cards.findAll({
       where: {
         cardyear: yearSearch,
-        setname: setSearch
+
+        setname: setSearch,
+
       }
     }).then(function (data) {
       // We have access to the todos as an argument inside of the callback function
-      // console.log(typeof (data))
-      // console.log("end of data")
+      console.log(typeof (data))
+      console.log("end of data")
+      db.userscards.findAll({
+        where: {
+          userId: req.user.id,
+        }
+      }).then(info => {
+        var newArray = [];
+        var userCards = info.map((element) => element.cardId)
+        console.log(userCards)
+        for (let index = 0; index < data.length; index++) {
+          const card = data[index];
+        if (userCards.includes(card.cardId)) {
+          card.checked = "true";
+        } else  {
+          card.checked = "false"
+        };
+      }
+      console.log(data)
+      res.render("set", { cards: data })
+      })
+      
       // res.send(data)
 
       // var currentSet = {
@@ -71,9 +95,7 @@ module.exports = function (app) {
       //   currentSet.cardInfo.concat(currentCardData)
       // }
       // var setToRender = currentSet
-      res.render("set", { cards: data })
+      //res.render("set", { cards: data })
     });
-
   });
-
 };

@@ -48,7 +48,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/userscards", async function (req, res) {
+  app.get("/api/userscards", async function(req, res) {
     await db.sequelize.query(`SELECT cards.id, cards.cardnumber, cards.name, cards.setname, cards.cardyear
     FROM cards
     INNER JOIN userscards
@@ -105,4 +105,13 @@ module.exports = function (app) {
   //   });
 
   // });
+  
+  app.post("/api/cardlist", async (req, res) => {
+    db.userscards.create({
+      UserId: req.user.id,
+      cardId: req.body.cardId
+    }).then((data) => {
+      res.send()
+    })
+  })
 };

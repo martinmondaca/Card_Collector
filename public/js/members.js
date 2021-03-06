@@ -1,3 +1,5 @@
+var userID;
+
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -13,8 +15,6 @@ $(document).ready(() => {
 
 
 $(document).ready(function () {
-
-  //pdf
 
   //sidenav
 
@@ -47,4 +47,21 @@ $(document).ready(function () {
     })
   }
 
+function cardSave() {
+  var currentCard = $(this)
+  .parent()
+  .parent()
+  .data("id");
+  return currentCard
+}
+
+$('.checkbox').on('click', function (e) {
+  console.log('edit submtted', $(this).attr("id"))
+  $.post("/api/cardlist", {
+    cardId: $(this).attr("id"),
+  })
+    .then(function () {
+      console.log("Card Saved")
+    });
+})
 });
