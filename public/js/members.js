@@ -1,32 +1,3 @@
-// function newCardRow(data) {
-//   var tableBody = $("#tableBody")
-//   var tableRow = `<tr>
-//   <td id="cardnumber">${data.cardnumber}</td>
-//   <td id="playername">${data.name}</td>
-//   <td id="isowned">
-//     <div class="mdc-form-field">
-//       <div class="mdc-checkbox">
-//         <input type="checkbox"
-//                class="mdc-checkbox__native-control"
-//                id="checkbox-1"/>
-//         <div class="mdc-checkbox__background">
-//           <svg class="mdc-checkbox__checkmark"
-//                viewBox="0 0 24 24">
-//             <path class="mdc-checkbox__checkmark-path"
-//                   fill="none"
-//                   d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-//           </svg>
-//           <div class="mdc-checkbox__mixedmark"></div>
-//         </div>
-//         <div class="mdc-checkbox__ripple"></div>
-//       </div>
-//     </div>
-//   </td>
-//   </tr>`
-//   tableBody.append(tableRow)
-// }
-
-
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -45,12 +16,18 @@ $(document).ready(() => {
 
 
 $(document).ready(function () {
+
+  //pdf
+  const pdfKit = require("pdfkit")
+  const blobStream = require("blob-stream")
   //sidenav
+
   $('.sidenav').sidenav();
 
   $('.collapsible').collapsible();
 
   $('.fixed-action-btn').floatingActionButton();
+
 
   //card img carousel
   $('.carousel').carousel({
@@ -60,4 +37,25 @@ $(document).ready(function () {
   setInterval(function () {
     $('.carousel').carousel('next');
   }, 2000);
+
+
+
+  //creating pdf file
+  function makePDF() {
+    const doc = new pdfKit;
+
+    const stream = doc.pipe(blobStream())
+
+    doc.end()
+
+    stream.on('finish', function () {
+      const url = stream.toBlobURL("application/pdf")
+      const element = document.getElementById("downloadPDF")
+      element.setAttribute("href", url)
+      element.style.display = "block"
+    })
+  }
+
+
+
 });
