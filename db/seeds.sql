@@ -12,7 +12,7 @@ CREATE TABLE baseball
 	cardyear INTEGER NOT NULL,
 	PRIMARY KEY (id)
 );
---
+-
 
 INSERT INTO baseball (cardnumber, name, setname, cardyear)
 VALUES (1, "Hank Aaron", "Bazooka", 1959);
