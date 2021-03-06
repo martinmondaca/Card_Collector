@@ -27,6 +27,12 @@ module.exports = function (sequelize, DataTypes) {
         timestamps: false
     });
 
+    cards.associate = function (models) {
+        cards.hasMany(models.userscards, {
+            onDelete: "cascade",
+        });
+    }
+
     // Item.associate = function(models) {
     //     Item.belongsTo(models.User, {
     //         foreignKey: {
