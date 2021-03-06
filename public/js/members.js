@@ -1,3 +1,5 @@
+var userID;
+
 $(document).ready(() => {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -18,8 +20,8 @@ $(document).ready(() => {
 $(document).ready(function () {
 
   //pdf
-  const pdfKit = require("pdfkit")
-  const blobStream = require("blob-stream")
+  // const pdfKit = require("pdfkit")
+  // const blobStream = require("blob-stream")
   //sidenav
 
   $('.sidenav').sidenav();
@@ -41,21 +43,37 @@ $(document).ready(function () {
 
 
   //creating pdf file
-  function makePDF() {
-    const doc = new pdfKit;
+  // function makePDF() {
+  //   const doc = new pdfKit;
 
-    const stream = doc.pipe(blobStream())
+  //   const stream = doc.pipe(blobStream())
 
-    doc.end()
+  //   doc.end()
 
-    stream.on('finish', function () {
-      const url = stream.toBlobURL("application/pdf")
-      const element = document.getElementById("downloadPDF")
-      element.setAttribute("href", url)
-      element.style.display = "block"
-    })
-  }
+  //   stream.on('finish', function () {
+  //     const url = stream.toBlobURL("application/pdf")
+  //     const element = document.getElementById("downloadPDF")
+  //     element.setAttribute("href", url)
+  //     element.style.display = "block"
+  //   })
+  // }
 
+function cardSave() {
+  var currentCard = $(this)
+  .parent()
+  .parent()
+  .data("id");
+  return currentCard
+}
 
+$('.checkbox').on('click', function (e) {
+  console.log('edit submtted', $(this).attr("id"))
+  $.post("/api/cardlist", {
+    cardId: $(this).attr("id"),
+  })
+    .then(function () {
+      console.log("Card Saved")
+    });
+})
 
 });
