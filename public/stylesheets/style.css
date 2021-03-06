@@ -14,5 +14,31 @@ form.login {
 footer {
   position: fixed;
   bottom: 0px;
+  padding: 0px;
+  height: 27%;
   width: 100%;
+}
+
+.login-box{
+  width: 50%;
+}
+
+.signup-box{
+  width: 50%;
+}
+
+.appLogo{
+  position: relative;
+  top: 5px;
+  right: 2.5px;
+}
+
+.sidenav-trigger{
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+#makePDF{
+  padding: 20px;
 }

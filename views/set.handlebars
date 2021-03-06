@@ -1,46 +1,3 @@
-{{!-- <label>
-    <input type="checkbox" class="filled-in" checked="checked" />
-</label></td>
-
-<table>
-    <thead>
-        <tr>
-            <th>Card Number</th>
-            <th>Card Name</th>
-            <th>Set Name</th>
-            <th>Set Year</th>
-            <th>Owned?</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        {{#each cardInfo}}
-        <tr>
-            <td>{{cardnumber}}</td>
-            <td>{{name}}</td>
-            <td>{{setname}}</td>
-            <td>{{cardyear}}</td>
-            <td><label>
-                    <input type="checkbox" class="filled-in" checked="checked" />
-                </label></td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table> --}}
-
-
-
-{{!-- <ul>
-    {{#each cardInfo }}
-    <li><a id={{id}}>{{id}}</a></li>
-    {{/each}}
-</ul>
---}}
-
-{{!-- {{#each cards}}
-<p>{{this.id}}</p>
-
-{{/each}} --}}
 <div class="container">
     <table class="highlight">
         <thead>
@@ -72,4 +29,13 @@
             {{/each}}
         </tbody>
     </table>
+
+
+</div>
+
+<br>
+<div id="makePDF" class="container center-align">
+    <a id="downloadPDF" class="waves-effect waves-light btn blue center-align"><i
+            class="material-icons right">file_download</i>Download
+        PDF</a>
 </div>
