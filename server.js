@@ -1,6 +1,8 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+const path = require("path");
+
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 // var htmlRoutes = require("./routes/html-routes")
@@ -13,7 +15,7 @@ const db = require("./models");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname + "/public")));
 // app.use(htmlRoutes)
 // We need to use sessions to keep track of our user's login status
 app.use(
