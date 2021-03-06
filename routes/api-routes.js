@@ -48,7 +48,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/userscards", async function(req, res) {
+  app.get("/api/userscards", async function (req, res) {
     await db.sequelize.query(`SELECT cards.id, cards.cardnumber, cards.name, cards.setname, cards.cardyear
     FROM cards
     INNER JOIN userscards
@@ -76,4 +76,33 @@ module.exports = function (app) {
       });
     }
   });
+
+  // app.get("/api/:setname/:cardyear", (req, res) => {
+  //   console.log(req.params.cardyear)
+  //   var setSearch = req.params.setname;
+  //   var yearSearch = req.params.cardyear;
+  //   db.cards.findAll({
+  //     where: {
+  //       cardyear: yearSearch,
+  //       setname: setSearch
+  //     }
+  //   }).then(function (data) {
+  //     // We have access to the todos as an argument inside of the callback function
+  //     // console.log(typeof (data))
+  //     // console.log("end of data")
+  //     // res.send(data)
+
+  //     // var currentSet = {
+  //     //   cardInfo: []
+  //     // }
+
+  //     // for (var i = 0; i < data.length; i++) {
+  //     //   var currentCardData = JSON.parse(data[i]);
+  //     //   currentSet.cardInfo.concat(currentCardData)
+  //     // }
+  //     // var setToRender = currentSet
+  //     res.render("set", { cards: data })
+  //   });
+
+  // });
 };
