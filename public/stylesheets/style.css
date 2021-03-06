@@ -14,5 +14,15 @@ form.login {
 footer {
   position: fixed;
   bottom: 0px;
+  padding: 0px;
+  height: 30%;
   width: 100%;
+}
+
+.login-box{
+  width: 50%;
+}
+
+.signup-box{
+  width: 50%;
 }
