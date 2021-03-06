@@ -18,26 +18,6 @@ module.exports = function (app) {
   }));
   app.set("view engine", "handlebars");
   //hard coding years
-  var Bazooka = {
-    setYear: [
-      { year: 1959 },
-      { year: 1960 },
-      { year: 1961 },
-      { year: 1962 },
-      { year: 1963 },
-      { year: 1964 },
-      { year: 1965 },
-      { year: 1966 },
-      { year: 1967 },
-      { year: 1968 },
-      { year: 1971 },
-      { year: 1988 },
-      { year: 1989 },
-      { year: 1990 },
-      { year: 1991 },
-    ]
-  }
-
 
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
@@ -68,15 +48,15 @@ module.exports = function (app) {
   });
 
   app.get("/members/:setname/:cardyear", isAuthenticated, (req, res) => {
-    
-    
-    
+
     console.log(req.params.cardyear)
+    var setSearch = req.params.setname;
     var yearSearch = req.params.cardyear;
     var setSearch = req.params.setname
     db.cards.findAll({
       where: {
         cardyear: yearSearch,
+
         setname: setSearch,
 
       }
@@ -115,11 +95,7 @@ module.exports = function (app) {
       //   currentSet.cardInfo.concat(currentCardData)
       // }
       // var setToRender = currentSet
-      var currentSet = data[0].id
-      // console.log(currentSet)
-
+      //res.render("set", { cards: data })
     });
-
   });
-
 };

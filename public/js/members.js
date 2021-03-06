@@ -7,9 +7,6 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
-
-  // $.get("/members" + )
-
 });
 
 // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
@@ -19,9 +16,6 @@ $(document).ready(() => {
 
 $(document).ready(function () {
 
-  //pdf
-  // const pdfKit = require("pdfkit")
-  // const blobStream = require("blob-stream")
   //sidenav
 
   $('.sidenav').sidenav();
@@ -40,23 +34,18 @@ $(document).ready(function () {
     $('.carousel').carousel('next');
   }, 2000);
 
+  $(".displaySet").on("click", function displaySetTable(event) {
+    event.preventDefault()
+    var whatSet = $(this).attr("setname")
+    var whatYear = $(this).attr("id")
+    retrieveSet(whatSet, whatYear)
+  })
 
-
-  //creating pdf file
-  // function makePDF() {
-  //   const doc = new pdfKit;
-
-  //   const stream = doc.pipe(blobStream())
-
-  //   doc.end()
-
-  //   stream.on('finish', function () {
-  //     const url = stream.toBlobURL("application/pdf")
-  //     const element = document.getElementById("downloadPDF")
-  //     element.setAttribute("href", url)
-  //     element.style.display = "block"
-  //   })
-  // }
+  function retrieveSet(whatSet, whatYear) {
+    window.location.replace("/members/" + whatSet + "/" + whatYear, function (data) {
+      console.log("success")
+    })
+  }
 
 function cardSave() {
   var currentCard = $(this)
@@ -75,5 +64,4 @@ $('.checkbox').on('click', function (e) {
       console.log("Card Saved")
     });
 })
-
 });
