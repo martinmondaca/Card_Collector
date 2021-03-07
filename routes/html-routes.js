@@ -4,8 +4,6 @@ const path = require("path");
 const exphbs = require("express-handlebars")
 const Handlebars = require("handlebars")
 
-
-
 // const passport = require("../config/passport");
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access')
 
