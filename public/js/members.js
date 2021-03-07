@@ -1,6 +1,9 @@
 var userID;
+// import Darkmode from 'darkmode-js';
 
+// new Darkmode().showWidget();
 $(document).ready(() => {
+
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(data => {
@@ -47,21 +50,22 @@ $(document).ready(function () {
     })
   }
 
-function cardSave() {
-  var currentCard = $(this)
-  .parent()
-  .parent()
-  .data("id");
-  return currentCard
-}
+  function cardSave() {
+    var currentCard = $(this)
+      .parent()
+      .parent()
+      .data("id");
+    return currentCard
+  }
 
-$('.checkbox').on('click', function (e) {
-  console.log('edit submtted', $(this).attr("id"))
-  $.post("/api/cardlist", {
-    cardId: $(this).attr("id"),
+  $('.hasCurrentCard').on('click', function () {
+    console.log('edit submtted', $(this).attr("id"))
+    $.post("/api/cardlist", {
+      cardId: $(this).attr("id"),
+    })
+      .then(function () {
+        console.log("Card Saved")
+      });
   })
-    .then(function () {
-      console.log("Card Saved")
-    });
-})
+
 });
