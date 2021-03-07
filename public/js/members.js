@@ -10,8 +10,6 @@ $(document).ready(() => {
     $(".member-name").text(data.email);
   });
 
-
-
 });
 
 // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
@@ -69,6 +67,5 @@ $(document).ready(function () {
         console.log("Card Saved")
       });
   })
-
 
 });

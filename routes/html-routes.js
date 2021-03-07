@@ -82,22 +82,9 @@ module.exports = function (app) {
           };
         }
         console.log(data)
-        //   console.log(data)
         res.render("set", { cards: data })
-        // console.log(data)
       })
-      // res.send(data)
 
-      // var currentSet = {
-      //   cardInfo: []
-      // }
-
-      // for (var i = 0; i < data.length; i++) {
-      //   var currentCardData = JSON.parse(data[i]);
-      //   currentSet.cardInfo.concat(currentCardData)
-      // }
-      // var setToRender = currentSet
-      //res.render("set", { cards: data })
     });
   });
 
