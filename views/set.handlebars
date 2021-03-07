@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="currentSetTable">
     <table class="highlight">
         <thead>
             <tr>
@@ -13,20 +13,20 @@
         <tbody>
             {{#each cards}}
             <tr>
-                <td>{{this.cardnumber}}</td>
-                <td>{{this.name}}</td>
-                <td>{{this.setname}}</td>
-                <td>{{this.cardyear}}</td>
+                <td>{{cardnumber}}</td>
+                <td>{{name}}</td>
+                <td>{{setname}}</td>
+                <td>{{cardyear}}</td>
                 <td>
                     <form>
                         {{#if checked}}
-                        <label for={{this.id}}>
-                            <input checked="checked" class="checkbox" type="checkbox" class="filled-in" id={{this.id}} />
+                        <label for={{id}}>
+                            <input checked="checked" type="checkbox" class="filled-in hasCurrentCard" id={{id}} />
                             <span></span>
                         </label>
                         {{else}}
-                        <label for={{this.id}}>
-                            <input class = "checkbox" type="checkbox" class="filled-in" id={{this.id}} />
+                        <label for={{id}}>
+                            <input type="checkbox" class="filled-in hasCurrentCard" id={{id}} />
                             <span></span>
                         </label>
                         {{/if}}
@@ -41,8 +41,3 @@
 </div>
 
 <br>
-<div id="makePDF" class="container center-align">
-    <a id="downloadPDF" class="waves-effect waves-light btn blue center-align"><i
-            class="material-icons right">file_download</i>Download
-        PDF</a>
-</div>
