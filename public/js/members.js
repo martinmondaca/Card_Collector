@@ -50,22 +50,35 @@ $(document).ready(function () {
     })
   }
 
-  function cardSave() {
-    var currentCard = $(this)
-      .parent()
-      .parent()
-      .data("id");
-    return currentCard
-  }
-
   $('.hasCurrentCard').on('click', function () {
-    console.log('edit submtted', $(this).attr("id"))
-    $.post("/api/cardlist", {
-      cardId: $(this).attr("id"),
-    })
-      .then(function () {
-        console.log("Card Saved")
-      });
+    console.log('edit submitted', $(this).attr("id"));
+    cardId = $(this).attr("id");
+
+    if ($(this).attr("checked")) {
+      //delete
+      $(this).removeAttr("checked")
+      deleteOwn(cardId)
+    } else {
+      //create  
+      //checking the card        
+      $(this).attr("checked", "checked")
+
+      $.post("/api/cardlist", {
+        cardId: cardId,
+      })
+        .then(function () {
+          console.log("Card Saved")
+        });
+    }
   })
+
+  function deleteOwn(cardId) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/cardlist/" + cardId
+    }).then(function () {
+
+    })
+  }
 
 });
