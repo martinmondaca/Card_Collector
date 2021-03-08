@@ -1,9 +1,6 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
-const exphbs = require("express-handlebars")
-
-var user = [];
 
 module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -77,55 +74,21 @@ module.exports = function (app) {
     }
   });
 
-  // app.get("/api/:setname/:cardyear", (req, res) => {
-  //   console.log(req.params.cardyear)
-  //   var setSearch = req.params.setname;
-  //   var yearSearch = req.params.cardyear;
-  //   db.cards.findAll({
-  //     where: {
-  //       cardyear: yearSearch,
-  //       setname: setSearch
-  //     }
-  //   }).then(function (data) {
-  //     // We have access to the todos as an argument inside of the callback function
-  //     // console.log(typeof (data))
-  //     // console.log("end of data")
-  //     // res.send(data)
-
-  //     // var currentSet = {
-  //     //   cardInfo: []
-  //     // }
-
-  //     // for (var i = 0; i < data.length; i++) {
-  //     //   var currentCardData = JSON.parse(data[i]);
-  //     //   currentSet.cardInfo.concat(currentCardData)
-  //     // }
-  //     // var setToRender = currentSet
-  //     res.render("set", { cards: data })
-  //   });
-
-  // });
-
-
-
   app.delete("/api/cardlist/:cardId", async (req, res) => {
     db.userscards.destroy({
       where: {
         UserId: req.user.id,
         cardId: req.params.cardId
       }
-    }).then((data) => {
-      res.send()
+    }).then(() => {
     })
   })
-
 
   app.post("/api/cardlist", async (req, res) => {
     db.userscards.create({
       UserId: req.user.id,
       cardId: req.body.cardId
-    }).then((data) => {
-      // res.send()
+    }).then(() => {
     })
   })
 
