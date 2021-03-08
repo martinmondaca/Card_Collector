@@ -1,20 +1,23 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "cards_db",
-    "host": "127.0.0.1",
+    "username": "hh8ne143lb1wvun8",
+    "password": "lo712xkdbg00ar2y",
+    "database": "wj6y5y7y2yw74cxz",
+    "host": "eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "cards_db",
-    "host": "127.0.0.1",
+    "username": "hh8ne143lb1wvun8",
+    "password": "lo712xkdbg00ar2y",
+    "database": "wj6y5y7y2yw74cxz",
+    "host": "eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "hh8ne143lb1wvun8",
+    "password": "lo712xkdbg00ar2y",
+    "database": "wj6y5y7y2yw74cxz",
+    "host": "eyw6324oty5fsovx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
