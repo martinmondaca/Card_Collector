@@ -1,19 +1,3 @@
-DROP DATABASE IF EXISTS cards_db;
-
-CREATE DATABASE cards_db;
-
-USE cards_db;
-CREATE TABLE baseball
-(
-	id int NOT NULL AUTO_INCREMENT,
-	cardnumber INTEGER NOT NULL,
-	name varchar(255) NOT NULL,
-	setname varchar(255) NOT NULL,
-	cardyear INTEGER NOT NULL,
-	PRIMARY KEY (id)
-);
--
-
 INSERT INTO baseball (cardnumber, name, setname, cardyear)
 VALUES (1, "Hank Aaron", "Bazooka", 1959);
 
@@ -1633,8 +1617,3 @@ VALUES (21, "Kevin Appier", "Bazooka", 1991);
 
 INSERT INTO baseball (cardnumber, name, setname, cardyear)
 VALUES (22, "Scott Radinsky", "Bazooka", 1991);
-
-
-
-
-

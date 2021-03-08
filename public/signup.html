@@ -2,46 +2,77 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Collect 'Em All</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
+  <nav class="cyan lighten-2">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">
+        <img src="./images/applogo.png" class="appLogo" alt="Collect 'Em All Logo" width="50" height="50">
+        Collect 'Em All</a>
     </div>
   </nav>
-  <div class="container">
+
+
+  <main class="container signup-container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
+      <div class="col s10 offset-s1 m6 offset-m3 signup-box z-depth-5">
+        <h2>Sign Up</h2>
         <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          <div class="input-field">
+            <input type="email" id="email-input" class="validate">
+            <label for="email">Email</label>
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          <div class="input-field">
+            <input type="password" id="password-input" class="validate">
+            <label for="password">Password</label>
           </div>
           <div style="display: none" id="alert" class="alert alert-danger" role="alert">
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span> <span class="msg"></span>
           </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
+          <button class="btn waves-effect waves-light green accent-3" type="submit" name="action">Sign Up
+            <i class="material-icons right">mode_edit</i>
+          </button>
         </form>
         <br />
         <p>Or log in <a href="/login">here</a></p>
       </div>
     </div>
-  </div>
+  </main>
+
+  <footer class="page-footer cyan lighten-2">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h5 class="white-text">Collaborators</h5>
+          <p><a class="grey-text text-lighten-3" href="https://github.com/abgabbard" target="_blank">Andrew Gabbard</a>
+            |
+            <a class="grey-text text-lighten-3" href="https://github.com/gg2704" target="_blank">Gabriel Gonzales</a> |
+            <a class="grey-text text-lighten-3" href="https://github.com/martinmondaca" target="_blank">Martin
+              Mondaca</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container center-align">
+      <a href="https://github.com/martinmondaca/Card_Collector"><img src="images/github_logo.png"
+          style="width:50px; height: 50px;" alt="GitHub Repo Link"></a>
+    </div>
+  </footer>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>
 
 </body>

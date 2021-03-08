@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -36,6 +36,29 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+  app.get("/api/cards", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.cards.findAll({}).then(function (dbPP) {
+      // We have access to the todos as an argument inside of the callback function
+      console.log(dbPP)
+      res.json(dbPP);
+    });
+  });
+
+  app.get("/api/userscards", async function (req, res) {
+    await db.sequelize.query(`SELECT cards.id, cards.cardnumber, cards.name, cards.setname, cards.cardyear
+    FROM cards
+    INNER JOIN userscards
+    ON cards.id = userscards.cardId
+    INNER JOIN Users
+    ON Users.id = userscards.UserId
+    WHERE Users.id = ${req.user.id}`, { type: QueryTypes.SELECT }).then((results) => {
+      res.json(results)
+    }).catch(err => {
+      console.log(err)
+    })
+  });
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
@@ -50,4 +73,23 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.delete("/api/cardlist/:cardId", async (req, res) => {
+    db.userscards.destroy({
+      where: {
+        UserId: req.user.id,
+        cardId: req.params.cardId
+      }
+    }).then(() => {
+    })
+  })
+
+  app.post("/api/cardlist", async (req, res) => {
+    db.userscards.create({
+      UserId: req.user.id,
+      cardId: req.body.cardId
+    }).then(() => {
+    })
+  })
+
 };
