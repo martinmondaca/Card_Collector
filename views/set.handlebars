@@ -9,11 +9,14 @@
                 <th>Own?</th>
             </tr>
         </thead>
-
         <tbody>
             {{#each cards}}
             <tr>
+                {{#if cardnumber}}
                 <td>{{cardnumber}}</td>
+                {{else}}
+                <td>n/a</td>
+                {{/if}}
                 <td>{{name}}</td>
                 <td>{{setname}}</td>
                 <td>{{cardyear}}</td>
@@ -36,8 +39,5 @@
             {{/each}}
         </tbody>
     </table>
-
-
 </div>
-
 <br>
