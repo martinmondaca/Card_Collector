@@ -9,7 +9,6 @@ const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-ac
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
-const { doc } = require("prettier");
 
 module.exports = function (app) {
 
