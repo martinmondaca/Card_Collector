@@ -27,6 +27,8 @@ $(document).ready(function () {
 
   $('.fixed-action-btn').floatingActionButton();
 
+  $(".button-collapse").sideNav();
+
 
   //card img carousel
   $('.carousel').carousel({
