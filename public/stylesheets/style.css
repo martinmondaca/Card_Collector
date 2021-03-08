@@ -11,14 +11,6 @@ margin-bottom: 100px;
   font-family: 'Candal', sans-serif;
 }
 
-.login-container{
-  width: 40%;
-}
-
-.signup-container{
-  width: 40%;
-}
-
 .login-box{
 border: solid 10px;
 border-radius: 25px;
@@ -51,4 +43,10 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+.greeting{
+  border: solid 10px;
+border-radius: 25px;
+padding: 20px;
 }

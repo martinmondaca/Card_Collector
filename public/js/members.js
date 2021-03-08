@@ -1,7 +1,5 @@
 var userID;
-// import Darkmode from 'darkmode-js';
 
-// new Darkmode().showWidget();
 $(document).ready(() => {
 
   // This file just does a GET request to figure out which user is logged in
@@ -11,11 +9,6 @@ $(document).ready(() => {
   });
 
 });
-
-// Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-// var collapsibleElem = document.querySelector('.collapsible');
-// var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
 
 $(document).ready(function () {
 
@@ -27,9 +20,6 @@ $(document).ready(function () {
 
   $('.fixed-action-btn').floatingActionButton();
 
-  $(".button-collapse").sideNav();
-
-
   //card img carousel
   $('.carousel').carousel({
     padding: 200
@@ -37,7 +27,7 @@ $(document).ready(function () {
 
   setInterval(function () {
     $('.carousel').carousel('next');
-  }, 2000);
+  }, 1500);
 
   $(".displaySet").on("click", function displaySetTable(event) {
     event.preventDefault()
@@ -48,12 +38,10 @@ $(document).ready(function () {
 
   function retrieveSet(whatSet, whatYear) {
     window.location.replace("/members/" + whatSet + "/" + whatYear, function (data) {
-      console.log("success")
     })
   }
 
   $('.hasCurrentCard').on('click', function () {
-    console.log('edit submitted', $(this).attr("id"));
     cardId = $(this).attr("id");
 
     if ($(this).attr("checked")) {
@@ -69,7 +57,6 @@ $(document).ready(function () {
         cardId: cardId,
       })
         .then(function () {
-          console.log("Card Saved")
         });
     }
   })
@@ -79,8 +66,6 @@ $(document).ready(function () {
       method: "DELETE",
       url: "/api/cardlist/" + cardId
     }).then(function () {
-
     })
   }
-
 });

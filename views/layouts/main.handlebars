@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Passport Authentication</title>
+    <title>Collect 'Em All</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -10,10 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 </head>
 
 <body>
@@ -27,101 +25,84 @@
         </div>
     </nav>
 
-
-
-    <ul id="slide-out" class="sidenav">
-
-
-        <li><a href="#!"><i class="material-icons"></i></a>
-            <p class="center-align"><span class="member-name"></span></p>
-        </li>
-
-        <li class="no-padding">
-            <ul class="collapsible collapsible-accordion">
-                <li class="bold">
-                    <a class="collapsible-header waves-effect waves-teal" tabindex="0"> Baseball Sets</a>
-                    <div class="collapsible-body">
-                        <ul>
-                            <li class="no-padding">
-                                <ul class="collapsible collapsible-accordion">
-                                    <li class="bold">
-                                        <a class="collapsible-header waves-effect waves-teal" tabindex="0"> Bazooka</a>
-                                        <div class="collapsible-body">
-                                            <ul>
-                                                <li><a class="displaySet" setname="Bazooka" id="1959">1959</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1960">1960</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1961">1961</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1962">1962</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1963">1963</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1964">1964</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1965">1965</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1966">1966</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1967">1967</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1968">1968</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1971">1971</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1988">1988</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1989">1989</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1990">1990</a>
-                                                </li>
-                                                <li><a class="displaySet" setname="Bazooka" id="1991">1991</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
-            </ul>
-        </li>
-
-        <li>
-            <div class="divider"></div>
-        </li>
-
-        <li class="no-padding right-align">
-            <a href="mailto:collectemall@gmail.com" target="_blank" class="waves-effect waves-yellow">Contact Us <i
-                    class="material-icons right">email</i></a>
-        </li>
-
-        <li class="no-padding right-align">
-            <a href="/logout" class="waves-effect waves-red">Logout
-                <i class="material-icons right">exit_to_app</i></a>
-        </li>
-    </ul>
-
-    <a href="/#" data-target="slide-out" class="sidenav-trigger btn-floating btn-large green pulse">
-        <i class="material-icons">navigate_next</i></a>
-
-
-    <div class="container center-align">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h5>Welcome <strong><span class="member-name"></span></strong></h5>
-            </div>
-        </div>
-    </div>
-    {{{body}}}
-
+    <main>
+        <ul id="slide-out" class="sidenav">
+            <li><a href="#!"><i class="material-icons"></i></a>
+                <p class="center-align"><span class="member-name"></span></p>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li class="bold">
+                        <a class="collapsible-header waves-effect waves-teal" tabindex="0"> Baseball Sets</a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li class="no-padding">
+                                    <ul class="collapsible collapsible-accordion">
+                                        <li class="bold">
+                                            <a class="collapsible-header waves-effect waves-teal" tabindex="0">
+                                                Bazooka</a>
+                                            <div class="collapsible-body">
+                                                <ul>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1959">1959</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1960">1960</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1961">1961</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1962">1962</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1963">1963</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1964">1964</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1965">1965</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1966">1966</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1967">1967</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1968">1968</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1971">1971</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1988">1988</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1989">1989</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1990">1990</a>
+                                                    </li>
+                                                    <li><a class="displaySet" setname="Bazooka" id="1991">1991</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li class="no-padding right-align">
+                <a href="mailto:collectemall@gmail.com" target="_blank" class="waves-effect waves-yellow">Contact Us <i
+                        class="material-icons right">email</i></a>
+            </li>
+            <li class="no-padding right-align">
+                <a href="/logout" class="waves-effect waves-red">Logout
+                    <i class="material-icons right">exit_to_app</i></a>
+            </li>
+        </ul>
+        <a href="/#" data-target="slide-out" class="sidenav-trigger btn-floating btn-large green pulse">
+            <i class="material-icons">navigate_next</i></a>
+        {{{body}}}
+    </main>
+    <footer class="page-footer cyan lighten-2">
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="/js/members.js"></script>
     <script type="text/javascript" src="/js/darkmode.js"></script>

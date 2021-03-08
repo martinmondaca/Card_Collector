@@ -32,13 +32,5 @@ module.exports = function (sequelize, DataTypes) {
             onDelete: "cascade",
         });
     }
-
-    // Item.associate = function(models) {
-    //     Item.belongsTo(models.User, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-    // };
     return cards;
 }
