@@ -1,0 +1,52 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+nav {
+margin-bottom: 100px;
+}
+
+.brand-logo{
+  font-family: 'Candal', sans-serif;
+}
+
+.login-box{
+border: solid 10px;
+border-radius: 25px;
+padding: 20px;
+}
+
+.signup-box{
+  border: solid 10px;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.appLogo{
+  position: relative;
+  top: 5px;
+  right: 2.5px;
+}
+
+.sidenav-trigger{
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.greeting{
+  border: solid 10px;
+border-radius: 25px;
+padding: 20px;
+}

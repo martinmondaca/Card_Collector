@@ -1,0 +1,43 @@
+<div class="container" id="currentSetTable">
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Card Number</th>
+                <th>Name</th>
+                <th>Set Name</th>
+                <th>Set Year</th>
+                <th>Own?</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each cards}}
+            <tr>
+                {{#if cardnumber}}
+                <td>{{cardnumber}}</td>
+                {{else}}
+                <td>n/a</td>
+                {{/if}}
+                <td>{{name}}</td>
+                <td>{{setname}}</td>
+                <td>{{cardyear}}</td>
+                <td>
+                    <form>
+                        {{#if checked}}
+                        <label for={{id}}>
+                            <input checked="checked" type="checkbox" class="filled-in hasCurrentCard" id={{id}} />
+                            <span></span>
+                        </label>
+                        {{else}}
+                        <label for={{id}}>
+                            <input type="checkbox" class="filled-in hasCurrentCard" id={{id}} />
+                            <span></span>
+                        </label>
+                        {{/if}}
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+<br>
