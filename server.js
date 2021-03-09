@@ -1,6 +1,7 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
+var MemoryStore = require('memorystore')(session);
 const path = require("path");
 
 // Requiring passport as we've configured it
@@ -16,14 +17,23 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname + "/public")));
-// app.use(htmlRoutes)
 // We need to use sessions to keep track of our user's login status
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
+// app.use(
+//   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+// );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(session({
+  cookie: { maxAge: 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  resave: false,
+  saveUninitialized: true,
+  secret: 'keyboard cat'
+}))
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
