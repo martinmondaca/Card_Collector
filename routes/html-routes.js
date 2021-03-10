@@ -68,6 +68,7 @@ module.exports = function (app) {
           };
         }
         res.render("set", { cards: data })
+        console.log(data)
       })
     });
   });
