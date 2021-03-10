@@ -55,7 +55,7 @@
  Some of the most notable technologies and resources used are the following:
  * [Materialize CSS](https://materializecss.com/)
  * [Express.js](https://expressjs.com/)
- * [Express-Handlebars] (https://www.npmjs.com/package/express-handlebars)
+ * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
  * [Node.js](https://nodejs.org/en/)
  * [Sequelize ORM](https://sequelize.org/)
  * [Passport.js](http://www.passportjs.org/)
@@ -90,7 +90,7 @@
   * [Gabriel Gonzales](https://github.com/gg2704)
   
   Special shoutout to:
-  * [Joshua Arroyo](https://github.com/JAA459/).
+  * [Joshua Arroyo](https://github.com/JAA459/)
 
   ## License
   [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0)
