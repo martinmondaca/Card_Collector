@@ -64,6 +64,9 @@
  * [jQuery](https://jquery.com/)
  * [Darkmode.js](https://www.npmjs.com/package/darkmode-js)
 
+ * [Baseball Almanac](https://www.baseball-almanac.com/)
+ * [Trading Card Database](https://www.tcdb.com/)
+
 
   ## Tests
   * This application is deployed to Heroku live; therefore, there are no current tests to run.
