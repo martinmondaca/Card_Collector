@@ -44,11 +44,6 @@ module.exports = function (app) {
     res.render("home")
   });
 
-  app.get("/collections", isAuthenticated, (req, res) => {
-    // res.sendFile(path.join(__dirname, "../public/members.html"));
-    res.sendFile(path.join(__dirname, "../public/members.html"))
-  });
-
   app.get("/members/:setname/:cardyear", isAuthenticated, (req, res) => {
     var setSearch = req.params.setname;
     var yearSearch = req.params.cardyear;
